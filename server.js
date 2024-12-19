@@ -2,7 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
-
+const departementRoute = require("./routes/departementRoute")
+const employeeRoute = require("./routes/employeeRoute")
 dotenv.config();
 
 const app = express();
@@ -10,7 +11,8 @@ app.use(express.json()); // Middleware pour parser les requêtes JSON
 
 
 app.use('/api/users', userRoutes);
-
+app.use('/api/departments',departementRoute)
+app.use('/api/employees',employeeRoute)
 
 
 
